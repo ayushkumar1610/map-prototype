@@ -21,6 +21,7 @@
 	<script src="leaflet-routing-machine.js"></script>
 	<title></title>
 </head>
+<title>Map Prototype</title>
 <body>
 	<div id="route-btn" onclick="getRoute()">Get Route</div>
 	<div id="map" class="map"></div>
@@ -30,14 +31,17 @@
 		var latitude = 25.6091971;
 		var longitude = 85.138235;
 
+		// init map
 		var map = L.map('map').setView([latitude, longitude, -0.09], 13);
-		L.control.locate().addTo(map);
 
+		// draws map
 		var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			maxZoom: 19,
 			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 		}).addTo(map);
 
+
+		// get route
 		function getRoute(){
 			L.Routing.control({
     			waypoints: [
@@ -48,6 +52,13 @@
     			routeWhileDragging: true
 			}).addTo(map);
 		}
+
+		// get geolocation
+		map.addControl(L.control.locate({
+	       locateOptions: {
+	            enableHighAccuracy: true
+			}
+		}));
 
 	</script>
 </body>
