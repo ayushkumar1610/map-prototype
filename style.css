@@ -1,0 +1,22 @@
+#map { 
+	height: 100vh; 
+}
+
+#loc {
+	color: green;
+	height: 50px;
+	width: 100px;
+	background-color: rgb(122, 223, 21, 0.2);
+	border-color: green;
+}
+
+#route-btn {
+	cursor: pointer;
+	text-align: center;
+	color: floralwhite;
+	background-color: rgb(3, 144, 252);
+	width: 100px;
+	border: 1px solid rgb(3, 144, 252);
+	border-radius: 1cm;
+	margin-bottom: 1px;
+}
